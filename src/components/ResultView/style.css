@@ -1,0 +1,28 @@
+.result-view-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+.result-heading {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000;
+    border-bottom: 4px solid #000;
+    margin-bottom: 80px;
+    line-height: 1;
+}
+
+.result-label {
+    font-size: 35px;
+    font-weight: 700;
+    color: #B97A57;
+    border-bottom: 4px solid #B97A57;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
