@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Redirect } from 'react-router-dom';
 import './style.css'
 import ResultView from '../ResultView';
@@ -45,6 +45,7 @@ const GameBoardPage = () => {
     const [shuffledTiles, setShuffledTiles] = useState(tiles);
     const [visibleTiles, setVisibleTiles] = useState([]);
     const [previousTile, setPreviousTile] = useState(null);
+    const visibleTilesRef = useRef(visibleTiles);
 
     const [timeTaken, setTimeTaken] = useState({
         seconds: 0,
@@ -52,8 +53,12 @@ const GameBoardPage = () => {
     });
 
     useEffect(() => {
+        visibleTilesRef.current = visibleTiles;
+    }, [visibleTiles]);
+
+    useEffect(() => {
         const interval = setInterval(() => {
-            if(shuffledTiles.length === visibleTiles.length) {
+            if(shuffledTiles.length === visibleTilesRef.current.length) {
                 clearInterval(interval);
                 return;
             }
@@ -66,7 +71,7 @@ const GameBoardPage = () => {
             });
         }, 1000);
         return () => clearInterval(interval);
-    }, [visibleTiles, shuffledTiles]);
+    }, [ shuffledTiles]);
 
     useEffect(() => {
         const tiles = shuffle(shuffledTiles);
