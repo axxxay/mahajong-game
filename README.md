@@ -26,6 +26,7 @@ To install Mahjong Game, follow these steps:
     ```bash
     npm install
     ```
+4. Live App Link [https://mahajong-game-seven.vercel.app](https://mahajong-game-seven.vercel.app)
 
 ## Running Mahjong Game
 
