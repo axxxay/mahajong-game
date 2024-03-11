@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import './style.css'
 import ResultView from '../ResultView';
 
@@ -129,6 +130,10 @@ const GameBoardPage = () => {
     const username = localStorage.getItem('userName');
     const {seconds, minutes} = timeTaken;
     const timeTakenStr = `${`${minutes < 10 ? '0'+minutes : minutes} : ${seconds < 10 ? '0'+seconds : seconds}`}`;
+
+    if(!username) {
+        return <Redirect to="/" />
+    }
 
     return (
         <div className="user-name-page-con">
