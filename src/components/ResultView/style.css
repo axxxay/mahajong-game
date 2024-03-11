@@ -26,3 +26,17 @@
     margin-bottom: 20px;
     line-height: 1;
 }
+
+@media screen and (max-width: 768px) {
+    .result-view-con {
+        padding: 10px;
+    }
+    .result-heading {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .result-label {
+        font-size: 22px;
+    }
+    
+}

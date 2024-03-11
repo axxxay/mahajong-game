@@ -5,6 +5,11 @@
     width: 100%;
 }
 
+/* .container {
+    height: unset!important;
+    min-height: 100vh!important;
+} */
+
 .score-label {
     font-size: 25px;
     font-weight: 700;
@@ -18,7 +23,7 @@
     width: 100%;
     border: 4px solid black;
     height: 100%;
-    margin-top: 15px;
+    margin: 15px 0px;
     padding: 15px;
 }
 
@@ -57,4 +62,23 @@
 .active-tile {
     background-color: #f0e8b5;
     border: 4px solid #a58d01;
+}
+
+@media screen and (max-width: 768px){
+    .game-board-con {
+        padding: 10px;
+    }
+    .score-label {
+        font-size: 20px;
+    }
+    .user-name {
+        font-size: 20px;
+        text-align: center;
+    }
+    .tile {
+        width: 22%;
+        height: 60px;
+        font-size: 20px;
+        margin: 1.5%;
+    }
 }

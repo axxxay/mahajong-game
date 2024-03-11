@@ -76,14 +76,10 @@ const GameBoardPage = () => {
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
     
-        // While there remain elements to shuffle...
         while (0 !== currentIndex) {
-    
-            // Pick a remaining element...
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex -= 1;
     
-            // And swap it with the current element.
             temporaryValue = array[currentIndex];
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
@@ -93,7 +89,6 @@ const GameBoardPage = () => {
     }
 
     const handleTileClick = (tile) => {
-        // If the tile is already visible or matched, return early
         if (visibleTiles.includes(tile)) {
             return;
         }
@@ -136,7 +131,7 @@ const GameBoardPage = () => {
     }
 
     return (
-        <div className="user-name-page-con">
+        <div className="user-name-page-con container">
             <h1 className='heading'>Mahajong Game</h1>
             <div className="score-time-con">
                 <p className="score-label">Score: {score}</p>
